@@ -29,7 +29,20 @@ def averageSlopeIntercept(image, lines):
         leftLine  = makeCoordinates(image, leftFitAverage)
         rightLine = makeCoordinates(image, rightFitAverage)
         averagedLines = [leftLine, rightLine]
-    return averagedLines
+        return averagedLines
+
+    elif len(leftFit):
+        leftFitAverage  = np.average(leftFit, axis=0)
+        leftLine  = makeCoordinates(image, leftFitAverage)
+        averagedLines = [leftLine]
+        return averagedLines
+        
+    elif len(rightFit):
+        rightFitAverage = np.average(rightFit, axis=0)
+        rightLine = makeCoordinates(image, rightFitAverage)
+        averagedLines = [rightLine]
+        return averagedLines
+
 
 def canny(image):
     gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
