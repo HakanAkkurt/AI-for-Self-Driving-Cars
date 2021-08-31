@@ -31,7 +31,6 @@ def averageSlopeIntercept(image, lines):
         averagedLines = [leftLine, rightLine]
     return averagedLines
 
-
 def canny(image):
     gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
