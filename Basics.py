@@ -8,10 +8,8 @@ else:
     print('could not find the', item)
     print(grocery_items)
 
-
 grocery_items.update({item: 2.77})
 print(grocery_items)
-
 
 months = ['Januar', 'Ferbuar', 'März']
 for month in months:
