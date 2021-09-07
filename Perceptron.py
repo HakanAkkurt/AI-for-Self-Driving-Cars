@@ -1,5 +1,4 @@
 import numpy as np
-import tensorflow.keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
@@ -27,7 +26,7 @@ h = model.fit(x = X, y = Y, verbose = 1, batch_size = 50, epochs = 500, shuffle 
 # plt.legend(['loss'])
 # plt.show()
 
-def plotDecisionBoundry(X, Y, model):
+def plotDecisionBoundary(X, Y, model):
     xSpan = np.linspace(min(X[:, 0]) - 1, max(X[:, 0]) + 1)
     ySpan = np.linspace(min(X[:, 1]) - 1, max(X[:, 1]) + 1)
     xx, yy = np.meshgrid(xSpan, ySpan)
@@ -37,7 +36,7 @@ def plotDecisionBoundry(X, Y, model):
     z = predFunc.reshape(xx.shape)
     plt.contourf(xx, yy, z)
 
-plotDecisionBoundry(X, Y, model)
+plotDecisionBoundary(X, Y, model)
 plt.scatter(X[:nPts,0], X[:nPts,1])
 plt.scatter(X[nPts:,0], X[nPts:,1])
 
