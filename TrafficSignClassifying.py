@@ -90,6 +90,10 @@ X_train = X_train.reshape(34799, 32, 32, 1)
 X_test = X_test.reshape(12630, 32, 32, 1)
 X_val = X_val.reshape(4410, 32, 32, 1)
 
+y_train = to_categorical(y_train, 43)
+y_test = to_categorical(y_test, 43)
+y_val = to_categorical(y_val, 43)
+
 datagen = ImageDataGenerator(width_shift_range=0.1,
                             height_shift_range=0.1,
                             zoom_range=0.2,
@@ -98,10 +102,6 @@ datagen = ImageDataGenerator(width_shift_range=0.1,
 datagen.fit(X_train)
 batches = datagen.flow(X_train, y_train, batch_size=20)
 X_batch, y_batch = next(batches)
-
-y_train = to_categorical(y_train, 43)
-y_test = to_categorical(y_test, 43)
-y_val = to_categorical(y_val, 43)
 
 def modified_model():
     model = Sequential()
