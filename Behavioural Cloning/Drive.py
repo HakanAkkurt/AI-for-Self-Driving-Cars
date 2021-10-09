@@ -11,11 +11,9 @@ from PIL import Image
 import cv2
 import os
 
-# anaconda prompt: conda create --name selfDriveEnvironment
-# activate selfDriveEnvironment
-# conda install -c anaconda flask
-# conda install -c conda-forge python-socketio
-# conda install -c conda-forge eventlet
+# pip install flask
+# pip install python-socketio
+# pip install eventlet
 # pip install Meld
 # pip install flask_meld
 # Can't connect fix: 
